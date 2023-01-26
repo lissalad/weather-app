@@ -1,4 +1,5 @@
 import { useState } from "react";
+import RadioButton from "./RadioButton";
 
 export default function Weather() {
   const [zip, setZip] = useState("94210");
@@ -37,33 +38,24 @@ export default function Weather() {
         </select>
 
         <div className="flex flex-col">
-          <label>
-            <input
-              type="radio"
-              name="unit"
-              checked={unit === "metric"}
-              onChange={() => setUnit("metric")}
-            />
-            metric
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="unit"
-              checked={unit === "imperial"}
-              onChange={() => setUnit("imperial")}
-            />
-            imperial
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="unit"
-              checked={unit === "standard"}
-              onChange={() => setUnit("standard")}
-            />
-            standard
-          </label>
+          <RadioButton
+            label="metric"
+            name="unit"
+            checked={unit === "metric"}
+            onChange={() => setUnit("metric")}
+          />
+          <RadioButton
+            label="imperial"
+            name="unit"
+            checked={unit === "imperial"}
+            onChange={() => setUnit("imperial")}
+          />
+          <RadioButton
+            label="standard"
+            name="unit"
+            checked={unit === "standard"}
+            onChange={() => setUnit("standard")}
+          />
         </div>
       </form>
     </div>
